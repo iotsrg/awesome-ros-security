@@ -46,9 +46,15 @@ Modern robots run on the **Robot Operating System (ROS / ROS 2)** and a stack of
 - [Conference Talks](#conference-talks)
 - [Blogs & Vendor Research](#blogs--vendor-research)
 - [Newsletters & Podcasts](#newsletters--podcasts)
+- [Official ROS / ROS 2 Documentation](#official-ros--ros-2-documentation)
 - [Books](#books)
-- [Courses & Training](#courses--training)
-- [CTFs & Labs](#ctfs--labs)
+- [Online Courses & Training](#online-courses--training)
+- [YouTube Channels & Video Series](#youtube-channels--video-series)
+- [Simulators & Lab Environments](#simulators--lab-environments)
+- [Hardware Platforms for Learning](#hardware-platforms-for-learning)
+- [CTFs & Practice Labs](#ctfs--practice-labs)
+- [Related Curated Lists](#related-curated-lists-cross-references)
+- [ROS-Industrial Consortia](#ros-industrial-consortia)
 - [Communities & Disclosure](#communities--disclosure)
 - [Contribute](#contribute)
 
@@ -354,7 +360,7 @@ Pivot reading: [Awesome ICS Security guide](https://github.com/V33RU/awesome-con
 | **ISO/TS 15066** | Collaborative robots (cobots) safety | [ISO 15066](https://www.iso.org/standard/62996.html) |
 | **IEC 62443** | Industrial automation & control systems security | [IEC 62443](https://www.iec.ch/blog/understanding-iec-62443) |
 | **NIST SP 800-82 Rev.3** | Guide to OT security (covers robotics) | [NIST](https://csrc.nist.gov/pubs/sp/800/82/r3/final) |
-| **NIST IR 8259** | IoT cybersecurity baseline (applies to robots) | [NIST IR 8259](https://csrc.nist.gov/pubs/ir/8259/final) |
+| **NIST IR 8259** | IoT cybersecurity baseline (applies to robots) | [NIST.IR.8259.pdf](https://nvlpubs.nist.gov/nistpubs/ir/2020/NIST.IR.8259.pdf) |
 | **MITRE ATT&CK for ICS** | TTPs applicable to industrial robots | [attack.mitre.org/matrices/ics](https://attack.mitre.org/matrices/ics/) |
 | **SROS2 / DDS-Security** | Native ROS 2 security model | [SROS2](https://github.com/ros2/sros2) |
 | **Robot Security Framework (RSF)** | Methodology for robot security assessments | [github.com/aliasrobotics/RSF](https://github.com/aliasrobotics/RSF) |
@@ -560,42 +566,140 @@ When you can't find a specific talk above, search these archives:
 
 ---
 
+## Official ROS / ROS 2 Documentation
+
+The starting points. If you're new to ROS security, read these in order.
+
+### ROS 2 Core Docs (use the matching distro)
+- **[ROS 2 Documentation home](https://docs.ros.org/)** , root index for all distros (Rolling, Jazzy, Iron, Humble, etc.).
+- **[About ROS 2 Security](https://docs.ros.org/en/rolling/Concepts/Intermediate/About-Security.html)** , concept overview of the security model.
+- **[Setting up security tutorial](https://docs.ros.org/en/rolling/Tutorials/Advanced/Security/Introducing-ros2-security.html)** , end-to-end walkthrough configuring SROS2 from scratch.
+- **[Understanding the security keystore](https://docs.ros.org/en/rolling/Tutorials/Advanced/Security/The-Keystore.html)** , what every key file is for.
+- **[Ensuring security across machines](https://docs.ros.org/en/rolling/Tutorials/Advanced/Security/Security-on-Two.html)** , extending SROS2 to multi-host deployments.
+- **[Deployment Guidelines](https://docs.ros.org/en/humble/Tutorials/Advanced/Security/Deployment-Guidelines.html)** , production hardening practices.
+
+### REPs (ROS Enhancement Proposals)
+- **[REP-2006 , ROS 2 Vulnerability Disclosure Policy](https://ros.org/reps/rep-2006.html)** , how to report a ROS 2 bug.
+
+### SROS2 Reference
+- **[ros2/sros2 GitHub repo](https://github.com/ros2/sros2)** , source + CLI for keystore/enclave/policy.
+- **[SROS2 example policy files](https://github.com/ros2/sros2/tree/rolling/sros2/test/policies)** , `talker_listener.policy.xml`, `add_two_ints.policy.xml`, `minimal_action.policy.xml`, etc. , copy and adapt these.
+- **[DDS Security spec (OMG)](https://www.omg.org/spec/DDS-SECURITY/)** , the upstream standard SROS2 implements.
+
+### Working Groups
+- **[ROS 2 Security Working Group (ros-security/community)](https://github.com/ros-security/community)** , official WG, meeting notes, agendas.
+- **[ROS Deliberation WG](https://github.com/ros-wg-delib)** , task planning / autonomy stack (security-adjacent).
+
+---
+
 ## Books
 
-- *Robot Operating System (ROS) for Absolute Beginners*, Lentin Joseph.
-- *Hands-On ROS for Robotics Programming*, Bernardo Ronquillo Japón.
-- *ROS Robotics Projects*, Lentin Joseph & Jonathan Cacace.
-- *Mastering ROS for Robotics Programming*, Lentin Joseph.
-- *Industrial Cybersecurity*, Pascal Ackerman.
-- *Practical Industrial Internet of Things Security*, Sravani Bhattacharjee.
-- *Hacking Connected Cars*, Alissa Knight (relevance: shared autonomy stack).
-- *The Hardware Hacker*, Andrew "bunnie" Huang.
-- *Practical IoT Hacking*, Fotios Chantzis et al. (No Starch).
-- *The Car Hacker's Handbook*, Craig Smith (CAN / fieldbus overlap).
+### ROS / ROS 2 Programming (foundation before security)
+- **[Programming Robots with ROS](https://www.oreilly.com/library/view/programming-robots-with/9781449325480/)** , Morgan Quigley, Brian Gerkey, William D. Smart , O'Reilly 2015. Written by the OSRF founders. ROS 1 only but the architecture chapters are still the best in print. [Sample code](https://github.com/gbiggs/ros_book_sample_code).
+- **[Mastering ROS 2 for Robotics Programming, 4th ed.](https://www.packtpub.com/en-us/product/mastering-ros-2-for-robotics-programming-9781836209010)** , Lentin Joseph, Jonathan Cacace , Packt 2024. ROS 2 Jazzy, Nav2, MoveIt 2, Gazebo Sim, Micro-ROS. [Source code on GitHub](https://github.com/PacktPublishing/Mastering-ROS-2-for-Robotics-Programming).
+- **[A Concise Introduction to Robot Programming with ROS 2 (2nd ed.)](https://www.routledge.com/A-Concise-Introduction-to-Robot-Programming-with-ROS-2/Rico/p/book/9781032851488)** , Francisco Martín Rico. Companion code: [github.com/fmrico/book_ros2](https://github.com/fmrico/book_ros2).
+
+### Theory
+- **[Modern Robotics: Mechanics, Planning, and Control](http://hades.mech.northwestern.edu/index.php/Modern_Robotics)** , Kevin Lynch and Frank Park , Cambridge University Press 2017. Free PDF on the Northwestern wiki. Paired Coursera specialization linked below.
+
+### Adjacent (security-relevant context)
+- **Industrial Cybersecurity (2nd ed.)** , Pascal Ackerman , Packt 2021. OT context for industrial robots.
+- **The Car Hacker's Handbook** , Craig Smith , No Starch 2016. CAN bus / fieldbus overlaps with industrial robot controllers.
+- **Practical IoT Hacking** , Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, Beau Woods , No Starch 2021.
+- **The Hardware Hacker** , Andrew "bunnie" Huang , No Starch 2017. For when you have physical access to a robot.
 
 ---
 
-## Courses & Training
+## Online Courses & Training
 
-- **[Cybersecurity for Robotics, Alias Robotics](https://aliasrobotics.com/training.php)**.
-- **[The Construct ROS / ROS 2 Courses](https://www.theconstructsim.com/)**.
-- **[SANS ICS410 ICS/SCADA Security Essentials](https://www.sans.org/cyber-security-courses/ics-scada-cyber-security-essentials/)**.
-- **[SANS ICS612 ICS Cybersecurity In-Depth](https://www.sans.org/cyber-security-courses/ics-cybersecurity-in-depth/)**.
-- **[Robot Ignite Academy](https://www.robotigniteacademy.com/)**.
-- **[ROS Industrial Training](https://industrial-training-master.readthedocs.io/)**.
-- **[Coursera Modern Robotics](https://www.coursera.org/specializations/modernrobotics)**.
+### ROS / ROS 2 fundamentals (do these first)
+- **[The Construct , ROS 2 Basics](https://www.theconstruct.ai/robotigniteacademy_learnros/ros-courses-library/ros2-basics-course/)** , in-browser ROS 2 with no local setup. Free + paid tiers.
+- **[The Construct , ROS 2 Security Online Course](https://www.theconstruct.ai/robotigniteacademy_learnros/ros-courses-library/ros2-security-online-course/)** , one of the very few dedicated ROS 2 security courses.
+- **[Coursera , Modern Robotics specialization (Northwestern)](https://www.coursera.org/specializations/modernrobotics)** , 6-course series by Lynch and Park.
+- **[ROS-Industrial training (ROS 1)](https://github.com/ros-industrial/industrial_training)** , the canonical industrial-robotics training repo + [docs](https://industrial-training-master.readthedocs.io/).
+- **[ROS-Industrial ROS 2 training](https://github.com/ros-industrial/ros2_i_training)** , the ROS 2 (Foxy onward) equivalent.
+
+### Security-specific
+- **[Cybersecurity for Robotics , Alias Robotics](https://aliasrobotics.com/training.php)** , vendor-run, hands-on with their Alurity toolbox.
+- **[SANS ICS410 , ICS/SCADA Security Essentials](https://www.sans.org/cyber-security-courses/ics-scada-cyber-security-essentials/)** , ICS context, not robot-specific.
+- **[SANS ICS612 , ICS Cybersecurity In-Depth](https://www.sans.org/cyber-security-courses/ics-cybersecurity-in-depth/)** , deeper OT.
 
 ---
 
-## CTFs & Labs
+## YouTube Channels & Video Series
 
-- **[Alurity](https://aliasrobotics.com/alurity.php)**: modular toolbox for robot cybersecurity labs.
-- **[Robotics CTF (RCTF)](https://github.com/aliasrobotics/RCTF)**: CTF challenges specific to robots.
-- **[ROS-Industrial Training](https://github.com/ros-industrial/industrial_training)**: base for security lab builds.
-- **[Gazebo](https://gazebosim.org/)** + custom red-team scenarios for safe robot exploitation practice.
-- **[Webots](https://cyberbotics.com/)**: open-source robot simulator suitable for security labs.
-- **[Ignition Fortress](https://gazebosim.org/docs/fortress/)**: modern Gazebo for ROS 2 attack scenarios.
-- **[CTF Time, ICS / SCADA challenges](https://ctftime.org/)**: occasional robot themes.
+### ROS / ROS 2 tutorials (no security yet, but you need this base)
+- **[Articulated Robotics (Josh Newans)](https://www.youtube.com/@ArticulatedRobotics/videos)** , "Build a real robot with ROS 2" series. The clearest end-to-end ROS 2 video tutorial out there. Companion site: https://articulatedrobotics.xyz/
+- **[The Construct YouTube](https://www.youtube.com/@TheConstruct)** , ROS 1 and ROS 2 walkthroughs, open classes.
+- **[Robotis e-Manual videos](https://emanual.robotis.com/docs/en/platform/turtlebot3/videos/)** , TurtleBot3 reference videos.
+- **[ROSCon recordings (Vimeo)](https://vimeo.com/osrfoundation)** , Open Robotics Foundation's official archive of ROSCon and OSRF talks.
+
+### Embedded / Hardware Security (transferable to robot internals)
+- **[LiveOverflow](https://www.youtube.com/@LiveOverflow)** , general security with frequent embedded crossovers.
+- **[stacksmashing](https://www.youtube.com/@stacksmashing)** , chip glitching, hardware attacks.
+- **[Hak5 / Darren Kitchen](https://www.youtube.com/@hak5)** , RF, WiFi, USB attacks.
+
+---
+
+## Simulators & Lab Environments
+
+Use these to safely practice attacks without bricking real hardware.
+
+- **[Gazebo Sim](https://gazebosim.org/)** , the standard ROS 2 simulator. [GitHub](https://github.com/gazebosim/gz-sim).
+- **[Ignition / Gazebo Fortress](https://gazebosim.org/docs/fortress/)** , the LTS Gazebo for ROS 2 Humble.
+- **[Webots](https://cyberbotics.com/)** , open-source, cross-platform robot simulator.
+- **[Isaac Sim (NVIDIA)](https://developer.nvidia.com/isaac/sim)** , GPU-accelerated photorealistic simulator with ROS 2 bridge.
+- **[Alurity](https://aliasrobotics.com/alurity.php)** , dockerized robot-cybersecurity toolbox by Alias Robotics.
+- **[ROSCon19 Security Workshop (hands-on)](https://ros-swg.github.io/ROSCon19_Security_Workshop/)** , reproducible SROS2 lab.
+
+---
+
+## Hardware Platforms for Learning
+
+The robots you'll see in most papers, tutorials, and CTFs.
+
+- **[TurtleBot3 (ROBOTIS)](https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/)** , the de-facto ROS / ROS 2 learning robot. [GitHub](https://github.com/ROBOTIS-GIT/turtlebot3). Cheap, supports SROS2 demos.
+- **[TurtleBot 4 (Clearpath / iRobot Create 3)](https://turtlebot.github.io/turtlebot4-user-manual/)** , ROS 2 native successor.
+- **[Clearpath Husky / Jackal](https://clearpathrobotics.com/)** , outdoor / heavy unmanned ground vehicles, common in academic security research.
+- **[Universal Robots UR3e/UR5e/UR10e](https://www.universal-robots.com/)** , the cobot platform behind most published industrial-robot CVEs.
+- **[Unitree Go2 / G1](https://www.unitree.com/)** , quadruped and humanoid; subject of recent LLM-jailbreak research (RoboPAIR) and the 2025 Mayoral-Vilches Unitree G1 paper.
+
+---
+
+## CTFs & Practice Labs
+
+- **[Robotics CTF (RCTF)](https://github.com/aliasrobotics/RCTF)** , dedicated robot-hacking challenges (archived 2020, but scenarios still useful).
+- **[Alurity](https://aliasrobotics.com/alurity.php)** , modular toolbox for spinning up robot cyber lab scenarios.
+- **[ROS-Industrial Training repo](https://github.com/ros-industrial/industrial_training)** , solid base to wire offensive scenarios on top of.
+- **[Gazebo Sim](https://gazebosim.org/)** , build your own red-team scenarios safely.
+- **[Foxglove Studio (visualization for live attack debugging)](https://foxglove.dev/)** , inspect what your exploit is doing to the robot in real time. [WebSocket protocol spec](https://github.com/foxglove/ws-protocol).
+- **[CTFtime , ICS/SCADA tag](https://ctftime.org/tag/ics/)** , occasionally features robot-themed CTFs.
+
+---
+
+## Related Curated Lists (cross-references)
+
+The robotics-resources side of the world. Most don't focus on security, but they're authoritative for tools, libraries, and learning paths you may want to defend.
+
+- **[fkromer/awesome-ros2](https://github.com/fkromer/awesome-ros2)** , largest curated ROS 2 list (archived 2024, still excellent reference).
+- **[ps-micro/awesome-ros](https://github.com/ps-micro/awesome-ros)** , ROS 1 curated list.
+- **[ahundt/awesome-robotics](https://github.com/ahundt/awesome-robotics)** , general robotics resources.
+- **[kiloreux/awesome-robotics](https://github.com/kiloreux/awesome-robotics)** , another general robotics list.
+- **[jslee02/awesome-robotics-libraries](http://jslee02.github.io/awesome-robotics-libraries/)** , simulator and library focus.
+- **[shannon112/awesome-ros-mobile-robot](https://github.com/shannon112/awesome-ros-mobile-robot)** , SLAM, odometry, navigation focus.
+- **[Guillaumebeuzeboc/awesome-ROS-snap](https://github.com/Guillaumebeuzeboc/awesome-ROS-snap)** , ROS distributed as Snap packages.
+
+---
+
+## ROS-Industrial Consortia
+
+ROS-Industrial is the ROS branch focused on industrial / OT environments. The three regional consortia produce roadmaps, training, and white papers that shape what's deployed on factory floors.
+
+- **[ROS-Industrial (main)](https://rosindustrial.org/)** , project landing page and challenge/mission docs.
+- **[ROS-Industrial GitHub org](https://github.com/ros-industrial)** , 100+ repos including industrial_training and the ROS 2 i_training.
+- **[ROS-Industrial Consortium Americas (SwRI)](https://rosindustrial.org/ric-americas)**.
+- **[ROS-Industrial Consortium Europe (Fraunhofer IPA)](https://rosin-project.eu/)**.
+- **[ROS-Industrial Consortium Asia Pacific (ARTC, Singapore)](https://rosindustrial.org/ric-apac)**.
 
 ---
 
