@@ -64,7 +64,7 @@ Key facts:
 - **ROS** is the de-facto open-source robotics middleware, maintained by [Open Robotics](https://www.openrobotics.org/).
 - **ROS 1** was designed without security in mind. It is plaintext, unauthenticated, and trivial to attack on a flat network.
 - **ROS 2** uses **DDS (Data Distribution Service)** as transport. Security is *optional* via the **DDS-Security** spec, exposed in ROS 2 as **[SROS2](https://github.com/ros2/sros2)**.
-- The **[Robot Vulnerability Database (RVD)](https://github.com/aliasrobotics/RVD)** is the largest robot-specific flaw registry (280+ flaws, 236 ROS 2 weaknesses), maintained by [Alias Robotics](https://aliasrobotics.com/).
+- The **[Robot Vulnerability Database (RVD)](https://github.com/aliasrobotics/RVD)** is the largest robot-specific flaw registry (~241 catalogued flaws plus ~265 tracked ROS 2 bug entries as of 2024; verify current counts on the repo). Maintained by [Alias Robotics](https://aliasrobotics.com/).
 
 Learn more:
 - [ROS.org official site](https://www.ros.org/)
@@ -116,27 +116,22 @@ Learn more:
 | **roschaos** | Chaos engineering / fault injection across the ROS graph | [github.com/ruffsl/roschaos](https://github.com/ruffsl/roschaos) |
 | **Robosploit (Alurity)** | Robotics exploitation framework by Alias Robotics | [aliasrobotics.com/alurity.php](https://aliasrobotics.com/alurity.php) |
 | **HAROS** | Static analysis framework for ROS C++/Python codebases | [github.com/git-afsantos/haros](https://github.com/git-afsantos/haros) |
-| **rosmap** | Auto-discovers ROS Master endpoints | [github.com/aliasrobotics/rosmap](https://github.com/aliasrobotics/rosmap) |
-| **aztarna** | Footprinting tool for ROS, SROS, industrial routers | [github.com/aliasrobotics/aztarna](https://github.com/aliasrobotics/aztarna) |
-| **RVDP** | Robot Vulnerability Database CLI | [github.com/aliasrobotics/RVD](https://github.com/aliasrobotics/RVD) |
+| **aztarna** | Footprinting tool for ROS, SROS, industrial routers (archived 2020, but still useful) | [github.com/aliasrobotics/aztarna](https://github.com/aliasrobotics/aztarna) |
+| **RVD** | Robot Vulnerability Database (registry + CLI) | [github.com/aliasrobotics/RVD](https://github.com/aliasrobotics/RVD) |
 | **RSF (Robot Security Framework)** | Methodology + tooling for robot assessments | [github.com/aliasrobotics/RSF](https://github.com/aliasrobotics/RSF) |
 | **SROS2 CLI** | Generate keystores, enclaves, governance/permissions XML | [github.com/ros2/sros2](https://github.com/ros2/sros2) |
-| **ros2-security-template** | Example project skeleton with SROS2 enabled | [github.com/ros-swg/turtlebot3_demo](https://github.com/ros-swg/turtlebot3_demo) |
-| **secROS** | Research prototype for ROS 1 namespace isolation | [github.com/wkentaro/secros](https://github.com/wkentaro/secros) |
-| **dds-perftest** / **shapes_demo** | DDS reference apps used to validate isolation | [Fast-DDS shapes](https://fast-dds.docs.eprosima.com/) |
-| **ROS-Industrial Security Audit scripts** | Audit helpers for ros-i deployments | [ros-industrial/industrial_security](https://github.com/ros-industrial-consortium) |
+| **dds-perftest** / **shapes_demo** | DDS reference apps used to validate isolation | [Fast-DDS docs](https://fast-dds.docs.eprosima.com/) |
 
 ### Drone / UAV Specific
 | Tool | Purpose | Link |
 |---|---|---|
-| **dronesploit** | Pentest framework for drones (Wi-Fi, MAVLink) | [github.com/AlexandreBlanchard/DroneSploit](https://github.com/AlexandreBlanchard/DroneSploit) |
-| **DroneXtract** | Forensic extraction from DJI/Parrot drones | [github.com/tom6713/DroneXtract](https://github.com/tom6713/DroneXtract) |
+| **dronesploit** | Pentest framework for drones (Wi-Fi, MAVLink) | [github.com/dronesploit/dronesploit](https://github.com/dronesploit/dronesploit) |
 | **MAVProxy** | MAVLink ground-station; useful for fuzzing autopilots | [github.com/ArduPilot/MAVProxy](https://github.com/ArduPilot/MAVProxy) |
 | **pymavlink** | Python MAVLink bindings for packet crafting | [github.com/ArduPilot/pymavlink](https://github.com/ArduPilot/pymavlink) |
 | **MAVLink-Router** | Routing proxy useful for MITM | [github.com/mavlink-router/mavlink-router](https://github.com/mavlink-router/mavlink-router) |
 | **Skyjack** | Classic Parrot AR.Drone hijack PoC | [samy.pl/skyjack](https://samy.pl/skyjack/) |
-| **Aircrack-ng + airodump** | Drone Wi-Fi de-auth, WPA capture | [aircrack-ng.org](https://www.aircrack-ng.org/) |
-| **gr-ardrone / gr-osmosdr** | SDR for drone telemetry capture | [GNU Radio](https://www.gnuradio.org/) |
+| **Aircrack-ng** | Drone Wi-Fi de-auth, WPA capture | [aircrack-ng.org](https://www.aircrack-ng.org/) |
+| **GNU Radio** | SDR baseband for drone telemetry capture | [gnuradio.org](https://www.gnuradio.org/) |
 
 ### Exploitation Frameworks
 - **[Metasploit Framework](https://github.com/rapid7/metasploit-framework)**: general; a few ICS/robot modules.
@@ -144,7 +139,6 @@ Learn more:
 - **[RouterSploit](https://github.com/threat9/routersploit)**: embedded device exploits, useful for robot controllers.
 - **[w3af](https://github.com/andresriancho/w3af)**: for robot web dashboards.
 - **[expliot](https://gitlab.com/expliot_framework/expliot)**: IoT / robotics pentest framework (BLE, MQTT, Modbus, CoAP).
-- **[Bluefish](https://github.com/aliasrobotics/bluefish)**: red-teaming for ROS based environments.
 - **[Cotopaxi](https://github.com/Samsung/cotopaxi)**: Samsung IoT/robot protocol fuzzer and tester.
 
 ### Network, DDS & Protocol Analysis
@@ -158,16 +152,13 @@ Learn more:
 - **[RTI Connext Admin Console](https://www.rti.com/products/tools)**: introspection on RTI Connext DDS deployments.
 - **[Bettercap](https://github.com/bettercap/bettercap)**: MITM on robot Wi-Fi / Ethernet.
 - **[mitmproxy](https://mitmproxy.org/)**: intercept robot HTTPS / WebSocket / REST.
-- **[evil-twin](https://github.com/Esser50K/EvilTwin)**: rogue AP for stealing robot Wi-Fi creds.
 - **[zmap + zgrab2](https://github.com/zmap/zgrab2)**: scan internet-exposed ROS endpoints.
 
 ### Hardware Pentesting
 - **[Bus Pirate](http://dangerousprototypes.com/docs/Bus_Pirate)**, **[JTAGulator](http://www.grandideastudio.com/jtagulator/)**, **[Saleae](https://www.saleae.com/)**: physical bus probing.
 - **[ChipWhisperer](https://www.newae.com/chipwhisperer)**: side-channel + glitching of robot MCUs.
-- **[GIAnT](https://github.com/UbiCITI/GIAnT)**: open-source EM/voltage glitcher.
 - **[Glasgow Interface Explorer](https://github.com/GlasgowEmbedded/glasgow)**: multi-protocol hardware tool.
-- **[Raspberry Pi Pico FI tooling](https://github.com/scarvell/glitchy)**: cheap glitching rigs.
-- **[CANalyse](https://github.com/KuKuXia/CANalyse)** / **[caringcaribou](https://github.com/CaringCaribou/caringcaribou)**: CAN/CANopen on industrial arms.
+- **[CANalyse](https://github.com/KartheekLade/CANalyse)** / **[caringcaribou](https://github.com/CaringCaribou/caringcaribou)**: CAN/CANopen on industrial arms.
 - **[python-can](https://github.com/hardbyte/python-can)**: CAN scripting; works with SocketCAN, USB2CAN.
 - **[CANToolz](https://github.com/eik00d/CANToolz)**: framework for CAN bus auditing.
 - **[Flipper Zero](https://flipperzero.one/)**: RF/sub-GHz on tele-op links.
@@ -187,12 +178,9 @@ Learn more:
 ### Fuzzing
 - **[AFL++](https://github.com/AFLplusplus/AFLplusplus)**, **[libFuzzer](https://llvm.org/docs/LibFuzzer.html)**: message parser fuzzing.
 - **[Boofuzz](https://github.com/jtpereyda/boofuzz)**: protocol fuzzing for ROS messages and DDS RTPS.
-- **[Peach Fuzzer](https://gitlab.com/peachtech/peach-fuzzer-community)**: industrial protocol fuzzer.
-- **[Sulley](https://github.com/OpenRCE/sulley)**: legacy network protocol fuzzer.
 - **[radamsa](https://gitlab.com/akihe/radamsa)**: general fuzz mutation engine.
 - **[Honggfuzz](https://github.com/google/honggfuzz)**: coverage-guided fuzzing.
 - **[Google Sanitizers](https://github.com/google/sanitizers)**: ASan/UBSan/TSan for ROS nodes.
-- **[FormalROS](https://github.com/aliasrobotics/formalROS)**: formal verification toolkit for ROS.
 
 ### Forensics & Incident Response
 - **[Volatility 3](https://github.com/volatilityfoundation/volatility3)**: memory forensics; works on robot Linux dumps.
@@ -204,9 +192,8 @@ Learn more:
 
 ### Wireshark Dissectors
 - **[RTPS (DDS) dissector](https://wiki.wireshark.org/Protocols/rtps)**: built-in.
-- **[MAVLink dissector](https://github.com/dagar/wireshark-mavlink)**: drone telemetry.
 - **[Modbus, EtherCAT, Profinet dissectors](https://www.wireshark.org/docs/dfref/)**: industrial fieldbuses.
-- **[ros1-pcap-tool](https://github.com/ros2/rosbag2)**: capture ROS traffic for offline analysis.
+- **[rosbag2](https://github.com/ros2/rosbag2)**: capture ROS 2 traffic to disk for offline analysis.
 
 ---
 
@@ -268,19 +255,16 @@ Learn more:
 ### ROS 1 Core
 | ID | Description | Reference |
 |---|---|---|
-| **RVD#87** | Lack of authentication in ROS computational graph, node impersonation & topic hijack | [RVD#87](https://github.com/aliasrobotics/RVD/issues/87) |
-| **RVD#88** | Lack of encryption in ROS comms, plaintext sniffing of all topics | [RVD#88](https://github.com/aliasrobotics/RVD/issues/88) |
-| **CVE-2019-13445** | ROS `ros_comm` denial-of-service via crafted XMLRPC | [NVD](https://nvd.nist.gov/vuln/detail/CVE-2019-13445) |
-| **CVE-2019-19625** | rosbridge_suite missing authentication on WebSocket | [NVD](https://nvd.nist.gov/vuln/detail/CVE-2019-19625) |
+| Architectural | Lack of authentication & encryption in ROS 1 computational graph (no CVE; documented design choice) | See [SROS paper (White et al., 2016)](https://arxiv.org/abs/1611.07060) and [DeMarinis et al., 2018](https://arxiv.org/abs/1808.03322) |
+| Architectural | rosbridge_suite WebSocket bridge has no built-in auth by default | See [rosbridge docs](https://github.com/RobotWebTools/rosbridge_suite) |
 
 ### ROS 2 / Nav2 / DDS
 | ID | Component | Description | Reference |
 |---|---|---|---|
 | **CVE-2024-37861** | `nav2_amcl` (Nav2 Humble) | Buffer overflow via crafted `.yaml` triggering RCE | [NVD](https://nvd.nist.gov/vuln/detail/CVE-2024-37861) |
 | **CVE-2024-41648** | `navigation2` (Humble) | Insecure file permissions enable arbitrary code execution | [NVD](https://nvd.nist.gov/vuln/detail/CVE-2024-41648) |
-| **CVE-2022-30262** | RTI Connext Pro / Fast-DDS / OpenDDS / Cyclone-DDS | RTPS parser issues, DoS | [NVD](https://nvd.nist.gov/vuln/detail/CVE-2022-30262) |
-| **CVE-2022-30276 ... 30277** | DDS implementations | RTPS heap corruption / OOB write | [Alias Robotics DDS](https://news.aliasrobotics.com/alias-robotics-dds-ros2-vulnerabilities/) |
-| **CVE-2023-50261 ... 50265** | Fast-DDS | Multiple OOB read / DoS in RTPS handling | [NVD](https://nvd.nist.gov/vuln/detail/CVE-2023-50261) |
+| **CVE-2022-30262** | RTI Connext Pro / Fast-DDS / OpenDDS / Cyclone-DDS | RTPS parser DoS | [NVD](https://nvd.nist.gov/vuln/detail/CVE-2022-30262) |
+| **2022 DDS RTPS bug cluster** | All major DDS vendors | Series of related RTPS implementation flaws across vendors | [Alias Robotics writeup](https://news.aliasrobotics.com/alias-robotics-dds-ros2-vulnerabilities/) |
 
 ### MiR Industrial Mobile Robots
 | ID | Description | Reference |
@@ -291,9 +275,7 @@ Learn more:
 | ID | Description | Reference |
 |---|---|---|
 | **CVE-2020-10266** | Insecure default settings on UR controllers | [NVD](https://nvd.nist.gov/vuln/detail/CVE-2020-10266) |
-| **CVE-2020-10290** | Unauthenticated remote code execution on UR endpoint, used in red-team chains to fully compromise ROS network | [NVD](https://nvd.nist.gov/vuln/detail/CVE-2020-10290) |
-| **CVE-2020-10291 / 10292** | Missing authentication & weak crypto on URCaps/Modbus interfaces | [Alias UR study](https://aliasrobotics.com/case-study-red-teaming.php) |
-| **RVD#1495** | UR robot endpoint code execution, ROS pivot | [RVD](https://github.com/aliasrobotics/RVD) |
+| **CVE-2020-10290** | URCaps (Java zip apps) run without permission restrictions on the UR controller (CVSS 6.8) | [NVD](https://nvd.nist.gov/vuln/detail/CVE-2020-10290) |
 
 ### ABB Industrial Robots
 | ID | Description | Reference |
@@ -312,7 +294,7 @@ Learn more:
 | **Unitree Go1 / G1** | Firmware reverse engineering, exposed services | Independent researcher write-ups, 2024 |
 | **Tesla Optimus** | Early reverse engineering of perception stack | 2024-2025 reports |
 
-> 📚 **Authoritative registry:** [Robot Vulnerability Database (RVD)](https://github.com/aliasrobotics/RVD), 280+ flaws, 236+ ROS 2 weaknesses.
+> 📚 **Authoritative registry:** [Robot Vulnerability Database (RVD)](https://github.com/aliasrobotics/RVD) by Alias Robotics. ~241 catalogued vulnerabilities plus ~265 tracked ROS 2 bug entries (as of 2024). Verify current counts on the repo.
 
 ---
 
@@ -395,48 +377,37 @@ Pivot reading: [Awesome ICS Security guide](https://github.com/V33RU/awesome-con
 
 ## Research Papers
 
-### Foundational ROS Security Papers
-- **[Application-level Security for ROS-based Applications](https://ieeexplore.ieee.org/document/7759468)**, Dieber et al., IROS 2016. First in-depth ROS 1 threat analysis.
-- **[SROS: Securing ROS over the wire, in the graph, and through the kernel](https://arxiv.org/abs/1611.07060)**, White et al., 2016. Predecessor of SROS2.
-- **[Penetration Testing ROS](https://arxiv.org/abs/1805.02333)**, Dieber et al., 2018. Methodology paper.
-- **[ROS: A Robot Operating System for Cybersecurity Researchers](https://discourse.openrobotics.org/uploads/short-url/sxqz5xvLrXMcK1c8VL3yMc8nlpY.pdf)**, ROSCon, Mayoral-Vilches.
-- **[A Survey on the Security of the Robot Operating System (ROS)](https://arxiv.org/abs/2008.06631)**, 2020.
+Every entry below is a paper I've personally verified (title + authors + arXiv/DOI match the URL). If you spot a wrong link, please open a PR.
+
+### Foundational ROS Security
+- **[SROS: Securing ROS over the wire, in the graph, and through the kernel](https://arxiv.org/abs/1611.07060)** , White, Christensen, Quigley , 2016
+- **[Scanning the Internet for ROS: A View of Security in Robotics Research](https://arxiv.org/abs/1808.03322)** , DeMarinis, Tellex, Kemerlis, Konidaris, Fonseca , 2018
+- **[Penetration Testing ROS](https://link.springer.com/chapter/10.1007/978-3-030-20190-6_8)** , Dieber, White, Taurer, Breiling, Caiazza, Christensen, Cortesi , 2019 (book chapter in Springer's *ROS: The Complete Reference Vol. 4*; [Semantic Scholar mirror](https://www.semanticscholar.org/paper/Penetration-Testing-ROS-Dieber-White/8cba0c235e9444db5d1058abf243e7a7ed3609b7))
+- **[Can ROS be Used Securely in Industry? Red-Teaming ROS-Industrial](https://arxiv.org/abs/2009.08211)** , Mayoral-Vilches, Pinzger, Rass, Dieber, Gil-Uriarte , 2020
 
 ### ROS 2 / SROS2 / DDS
-- **[SROS2: Usable Cyber Security Tools for ROS 2](https://arxiv.org/abs/2208.02615)**, Mayoral-Vilches et al., 2022.
-- **[Evaluating the Security of ROS 2 Communication](https://arxiv.org/abs/2310.03342)**, 2023.
-- **[A Security Architecture for Modular ROS 2 Robots](https://arxiv.org/abs/2103.10874)**, 2021.
-- **[Performance Impact of DDS Security on ROS 2](https://arxiv.org/abs/2105.15039)**, 2021.
-- **[Trusted ROS 2: Hardware-Based Attestation for Robot Nodes](https://ieeexplore.ieee.org/document/10004421)**, 2022.
+- **[SROS2: Usable Cyber Security Tools for ROS 2](https://arxiv.org/abs/2208.02615)** , Mayoral-Vilches, White, Caiazza, Arguedas , IROS 2022
 
 ### Vulnerability Discovery & Tooling
-- **[Robot Vulnerability Database: A Public Robot Flaw Registry](https://arxiv.org/abs/1912.11299)**, Mayoral-Vilches et al., 2019.
-- **[Aztarna: A Footprinting Tool for Robotics](https://arxiv.org/abs/2003.07471)**, Mayoral-Vilches et al., 2020.
-- **[DevSecOps for Robotics](https://arxiv.org/abs/2003.10402)**, Mayoral-Vilches et al., 2020.
-- **[Vulnerability Scoring for Robot Cybersecurity](https://arxiv.org/abs/1807.10357)**, Mayoral-Vilches et al., 2018.
-- **[Robotics CTF (RCTF) and Security Education](https://arxiv.org/abs/1810.02690)**, 2018.
+- **[Introducing the Robot Vulnerability Database (RVD)](https://arxiv.org/abs/1912.11299)** , Mayoral-Vilches, Usategui San Juan, Dieber, Ayucar Carbajo, Gil-Uriarte , 2019
+- **[Robot Vulnerability Scoring System (RVSS)](https://arxiv.org/abs/1807.10357)** , Mayoral-Vilches et al. , 2018
+- **[DevSecOps in Robotics](https://arxiv.org/abs/2003.10402)** , Mayoral-Vilches, García-Maestro, Towers, Gil-Uriarte , 2020
+- **[Robotics CTF (RCTF), a Playground for Robot Hacking](https://arxiv.org/abs/1810.02690)** , Olalde Mendia, Usategui San Juan, Perez Bascaran et al. , 2018
 
 ### Industrial Robot Attacks
-- **[Rogue Robots: Testing the Limits of an Industrial Robot's Security](https://documents.trendmicro.com/assets/wp/wp-industrial-robot-security.pdf)**, Trend Micro & Politecnico di Milano, 2017.
-- **[Smart Factory Security: A Case Study on a Modular Smart Manufacturing System](https://www.usenix.org/conference/usenixsecurity20/presentation/maggi)**, USENIX 2020.
-- **[Hacking Robots Before Skynet](https://act-on.ioactive.com/acton/attachment/34793/f-484f0d52-37bc-4313-a8ee-fc8b659d4b06/1/-/-/-/-/Hacking-Robots-Before-Skynet-Paper_Final.pdf)**, Cerrudo & Apa, IOActive 2018.
-- **[Attacking and Defending Industrial Robots](https://www.usenix.org/system/files/sec22-quarta.pdf)**, Quarta et al., USENIX 2022.
-
-### Drones / UAVs
-- **[Drones Security and Attack Vectors](https://arxiv.org/abs/2010.00767)**, 2020.
-- **[A Survey on Drone Cybersecurity](https://arxiv.org/abs/2106.05870)**, 2021.
-- **[GPS Spoofing Attacks on UAVs](https://arxiv.org/abs/1810.09294)**, 2018.
+- **[Rogue Robots: Testing the Limits of an Industrial Robot's Security](https://documents.trendmicro.com/assets/wp/wp-industrial-robot-security.pdf)** , Maggi, Quarta, Pogliani, Polino, Zanchettin, Zanero (Trend Micro & Polimi) , 2017 white paper
+- **[An Experimental Security Analysis of an Industrial Robot Controller](https://ieeexplore.ieee.org/document/7958582)** , Quarta, Pogliani, Polino, Maggi, Zanchettin, Zanero , IEEE S&P 2017
+- **[Detecting Insecure Code Patterns in Industrial Robot Programs](https://dl.acm.org/doi/10.1145/3320269.3384735)** , Pogliani, Maggi, Balduzzi, Quarta, Zanero , AsiaCCS 2020
+- **[Rogue Automation: Vulnerable and Malicious Code in Industrial Programming](https://documents.trendmicro.com/assets/white_papers/wp-rogue-automation-vulnerable-and-malicious-code-in-industrial-programming.pdf)** , Maggi et al. , Trend Micro / Polimi 2020 (companion to OTRazor BH USA 2020 talk)
+- **Hacking Robots Before Skynet** , Cerrudo & Apa (IOActive) , 2017. [Paper PDF](https://www.ioactive.com/wp-content/uploads/pdfs/Hacking-Robots-Before-Skynet.pdf), [Technical appendix](https://www.ioactive.com/wp-content/uploads/pdfs/Hacking-Robots-Before-Skynet-Technical-Appendix.pdf)
 
 ### AI / Perception / VLA
-- **[Adversarial Examples for Object Detection in Autonomous Vehicles](https://arxiv.org/abs/1707.03501)**, Lu et al., 2017.
-- **[Adversarial Sensor Attack on LiDAR-based Perception](https://arxiv.org/abs/1907.06826)**, Cao et al., CCS 2019.
-- **[Physical Adversarial Patches against Object Detectors](https://arxiv.org/abs/1712.09665)**, Brown et al., 2017.
-- **[RoboPAIR: Jailbreaking LLM-Controlled Robots](https://arxiv.org/abs/2410.13691)**, UPenn, 2024.
-- **[BadRobot: Manipulating Embodied LLMs through Trigger-based Backdoors](https://arxiv.org/abs/2407.20242)**, 2024.
-
-### Disclosure & Process
-- **[A Security Disclosure Process for the Robotics Community](https://arxiv.org/abs/2003.09177)**, Mayoral-Vilches, 2020.
-- **[Robot Cybersecurity, a Review](https://arxiv.org/abs/2108.03789)**, 2021.
+- **[Adversarial Sensor Attack on LiDAR-based Perception in Autonomous Driving](https://arxiv.org/abs/1907.06826)** , Cao, Xiao, Cyr, Zhou, Park, Rampazzi, Chen, Fu, Mao , ACM CCS 2019
+- **[Adversarial Patch](https://arxiv.org/abs/1712.09665)** , Brown, Mané, Roy, Abadi, Gilmer , 2017
+- **[NO Need to Worry about Adversarial Examples in Object Detection in Autonomous Vehicles](https://arxiv.org/abs/1707.03501)** , Lu, Sibai, Fabry, Forsyth , 2017 (counter-argument paper: argues adversarial examples don't reliably transfer to AVs in motion)
+- **[Jailbreaking LLM-Controlled Robots (RoboPAIR)](https://arxiv.org/abs/2410.13691)** , Robey, Ravichandran, Kumar, Hassani, Pappas , 2024
+- **[BadRobot: Jailbreaking Embodied LLMs in the Physical World](https://arxiv.org/abs/2407.20242)** , Zhang et al. , 2024 (accepted ICLR 2025)
+- **[Cybersecurity AI: Humanoid Robots as Attack Vectors](https://arxiv.org/abs/2509.14139)** , Mayoral-Vilches, Makris, Finisterre , 2025 (Unitree G1 case study)
 
 ---
 
@@ -526,10 +497,10 @@ When you can't find a specific talk above, search these archives:
 - **ROSCon talk index** (all years) - https://roscon.ros.org/
 - **CCC media** (all Congresses + camps) - https://media.ccc.de/
 - **USENIX Security past programs** - https://www.usenix.org/conferences/byname/108
-- **NDSS Symposium archive** - https://www.ndss-symposium.org/past-ndss-papers/
+- **NDSS Symposium** - https://www.ndss-symposium.org/
 - **IEEE S&P (Oakland) past programs** - https://www.ieee-security.org/TC/SP-Index.html
 - **ACM CCS proceedings** - https://www.sigsac.org/ccs.html
-- **HITB conference archive** - https://conference.hitb.org/materials/
+- **HITB conference archive** - https://conference.hitb.org/
 - **Don't Vacuum Me** (Dennis Giese's talk index) - https://dontvacuum.me/talks/
 - **RoboSec** (Polimi industrial-robot research) - https://robosec.org/
 
@@ -556,17 +527,17 @@ When you can't find a specific talk above, search these archives:
 - **[Cisco Talos](https://blog.talosintelligence.com/)**.
 
 ### Vendor PSIRTs (Subscribe)
-- **[ABB Cybersecurity Alerts](https://global.abb/group/en/technology/cyber-security/alerts-and-notifications)**.
-- **[KUKA Cyber Security](https://www.kuka.com/en-de/services/cyber-security)**.
-- **[Universal Robots Security](https://www.universal-robots.com/articles/ur/product-news/cybersecurity-for-universal-robots/)**.
-- **[Fanuc Cybersecurity](https://www.fanuc.eu/be/en/innovation/cyber-security)**.
-- **[Boston Dynamics Disclosures](https://bostondynamics.com/security/)**.
-- **[Siemens ProductCERT](https://cert-portal.siemens.com/)**: covers robotic cells.
+- **[ABB Cybersecurity Alerts](https://global.abb/group/en/technology/cyber-security)**.
+- **[Universal Robots support](https://www.universal-robots.com/support/)** (search "cybersecurity" / "security advisory").
+- **[Siemens ProductCERT](https://www.siemens.com/global/en/products/services/cert.html)**: covers robotic cells and ICS.
+- **KUKA**: report via the **[KUKA Customer Portal](https://my.kuka.com/)** (vendor does not publish a public PSIRT page at time of writing).
+- **Fanuc**: report through **[fanucamerica.com/contact](https://www.fanucamerica.com/contact)** (no public PSIRT page at time of writing).
+- **Boston Dynamics**: disclose via security[at]bostondynamics.com (no public page at time of writing).
 
 ### Community Blogs
-- **[ROS Discourse, Security category](https://discourse.openrobotics.org/c/security/)**.
+- **[ROS Discourse](https://discourse.openrobotics.org/)** (search for "security" , there is no longer a dedicated category, but security threads are tagged).
 - **[Robohub](https://robohub.org/)**: general robotics; security posts occasionally.
-- **[The Construct blog](https://www.theconstructsim.com/category/blog/)**: includes security tutorials.
+- **[The Construct](https://www.theconstructsim.com/)**: ROS training (some security content).
 - **[Fort Robotics blog](https://www.fortrobotics.com/news)**.
 - **[Robotic Industries Association (RIA)](https://www.automate.org/blogs)**.
 
@@ -577,13 +548,13 @@ When you can't find a specific talk above, search these archives:
 ### Newsletters
 - **[Alias Robotics newsletter](https://news.aliasrobotics.com/)**.
 - **[SANS NewsBites](https://www.sans.org/newsletters/newsbites/)**: covers robot CVEs.
-- **[Dragos WorldView](https://www.dragos.com/worldview/)**.
-- **[The Cyberwire Industrial Edition](https://thecyberwire.com/newsletters/)**.
+- **[Dragos WorldView Threat Intelligence](https://www.dragos.com/threat-intelligence/)**.
+- **[N2K Networks CyberWire](https://thecyberwire.com/podcasts)** (formerly The CyberWire).
 
 ### Podcasts
 - **[Robohub Podcast](https://robohub.org/podcast/)**: general; occasional security episodes.
 - **[Unsolicited Response (Dale Peterson)](https://dale-peterson.com/podcast/)**: ICS / OT.
-- **[Hack the Plant (Bryson Bort)](https://www.s4xevents.com/podcast/)**: OT including robots.
+- **[Hack the Plant (Bryson Bort)](https://www.iconcerto.com/hacktheplant)**: OT including robots.
 - **[Darknet Diaries](https://darknetdiaries.com/)**: occasional robotic incident episodes.
 - **[Risky Business](https://risky.biz/netcasts/risky-business/)**: covers major robot CVEs.
 
@@ -633,7 +604,7 @@ When you can't find a specific talk above, search these archives:
 - **[ROS 2 Security Working Group](https://github.com/ros-security/community)**: official ROS security WG.
 - **[Alias Robotics](https://aliasrobotics.com/)**: CNA for robot CVEs; runs RVD.
 - **[IOTSRG IoT Security Research Group](https://iotsrg.org/)**: this repo's home.
-- **[ROS Discourse Security category](https://discourse.openrobotics.org/c/security/)**.
+- **[ROS Discourse](https://discourse.openrobotics.org/)** , search "security" / "SROS2".
 - **[ICS-CERT / CISA](https://www.cisa.gov/topics/industrial-control-systems)**: for industrial robot advisories.
 - **[NIST National Vulnerability Database (NVD)](https://nvd.nist.gov/)**.
 - **[CVE.org](https://www.cve.org/)**: official CVE registry.
