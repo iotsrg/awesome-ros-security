@@ -272,26 +272,43 @@ Learn more:
 | **CVE-2022-30262** | RTI Connext Pro / Fast-DDS / OpenDDS / Cyclone-DDS | RTPS parser DoS | [NVD](https://nvd.nist.gov/vuln/detail/CVE-2022-30262) |
 | **2022 DDS RTPS bug cluster** | All major DDS vendors | Series of related RTPS implementation flaws across vendors | [Alias Robotics writeup](https://news.aliasrobotics.com/alias-robotics-dds-ros2-vulnerabilities/) |
 
-### MiR Industrial Mobile Robots
+### MiR (Mobile Industrial Robots) and Easy Robotics
 | ID | Description | Reference |
 |---|---|---|
-| **CVE-2020-10264 ... 10280** | Bundle of MiR controller flaws: insecure Ubuntu defaults, race conditions (CWE-362), permission errors (CWE-276), default creds, exposed services | [CVE-2020-10279](https://nvd.nist.gov/vuln/detail/CVE-2020-10279) |
+| **CVE-2020-10271** | MiR ROS computational graph exposed to network; attacker can take control of robot logic | [NVD](https://nvd.nist.gov/vuln/detail/CVE-2020-10271) |
+| **CVE-2020-10275** | REST API tokens derived from publicly-documented default credentials | [NVD](https://nvd.nist.gov/vuln/detail/CVE-2020-10275) |
+| **CVE-2020-10279** | Insecure Ubuntu defaults (race conditions CWE-362, permission errors CWE-276, default creds) , CVSS 9.8 | [NVD](https://nvd.nist.gov/vuln/detail/CVE-2020-10279) |
+| **CVE-2020-10280** | Incomplete HTTP header flood DoS on web dashboard (MiR + Easy Robotics) | [NVD](https://nvd.nist.gov/vuln/detail/CVE-2020-10280) |
 
-### Universal Robots (UR3 / UR5 / UR10)
+### Universal Robots (UR3 / UR5 / UR10 / UR+)
 | ID | Description | Reference |
 |---|---|---|
-| **CVE-2020-10266** | Insecure default settings on UR controllers | [NVD](https://nvd.nist.gov/vuln/detail/CVE-2020-10266) |
-| **CVE-2020-10290** | URCaps (Java zip apps) run without permission restrictions on the UR controller (CVSS 6.8) | [NVD](https://nvd.nist.gov/vuln/detail/CVE-2020-10290) |
+| **CVE-2020-10266** | UR+ platform components installed with no integrity verification (CVSS 8.1, CWE-345/353) | [NVD](https://nvd.nist.gov/vuln/detail/CVE-2020-10266) |
+| **CVE-2020-10290** | URCaps (Java zip apps) execute without permission restrictions on the controller (CVSS 6.8) | [NVD](https://nvd.nist.gov/vuln/detail/CVE-2020-10290) |
 
-### ABB Industrial Robots
+### KUKA
 | ID | Description | Reference |
 |---|---|---|
-| **CVE-2020-10281 ... 10287** | ABB controller / RobotWare flaws: missing auth, weak protocols, control parameter tampering | [Alias CNA](https://news.aliasrobotics.com/alias-robotics-as-cna-from-research-to-robotics-user-empowerment/) |
+| **CVE-2020-10268** | KR C4 firmware/hardware , critical services can be terminated from Windows Task Manager, halting the manipulator (requires physical access, CVSS 6.1) | [NVD](https://nvd.nist.gov/vuln/detail/CVE-2020-10268) |
 
-### Softbank NAO / Pepper Social Robots
+### ABB
 | ID | Description | Reference |
 |---|---|---|
-| **CVE-2020-10268, 10275 ... 10289** | NAOqi services exposed without authentication; remote takeover of social robots | [Alias CNA](https://news.aliasrobotics.com/alias-robotics-as-cna-from-research-to-robotics-user-empowerment/) |
+| **CVE-2020-10287** | IRC5 family robots with UAS service enabled ship with publicly-documented default credentials | [NVD](https://nvd.nist.gov/vuln/detail/CVE-2020-10287) |
+
+### ROS 1 Specific
+| ID | Description | Reference |
+|---|---|---|
+| **CVE-2020-10289** | ROS `actionlib` package allows arbitrary object instantiation via unsafe YAML load , RCE | [NVD](https://nvd.nist.gov/vuln/detail/CVE-2020-10289) |
+
+### Drone / UAV (MAVLink)
+| ID | Description | Reference |
+|---|---|---|
+| **CVE-2020-10281** | MAVLink v1.0 has no encryption by design , cleartext sensitive data over the wire (CWE-319) | [NVD](https://nvd.nist.gov/vuln/detail/CVE-2020-10281) |
+| **CVE-2020-10283** | MAVLink v1.0 has no authentication , attacker can force version downgrade from v2.0 during GCS-autopilot negotiation | [NVD](https://nvd.nist.gov/vuln/detail/CVE-2020-10283) |
+
+### Softbank NAO / Pepper
+The IOActive 2017-2018 *Hacking Robots Before Skynet* research documented ~50 flaws in NAO, Pepper, UR, Baxter. Not all received CVE assignments. See the [IOActive paper](https://www.ioactive.com/wp-content/uploads/pdfs/Hacking-Robots-Before-Skynet.pdf) and [technical appendix](https://www.ioactive.com/wp-content/uploads/pdfs/Hacking-Robots-Before-Skynet-Technical-Appendix.pdf) for full details.
 
 ### Tesla / Boston Dynamics / Unitree (Public Research)
 | Target | Description | Reference |
@@ -533,7 +550,7 @@ When you can't find a specific talk above, search these archives:
 - **[Cisco Talos](https://blog.talosintelligence.com/)**.
 
 ### Vendor PSIRTs (Subscribe)
-- **[ABB Cybersecurity Alerts](https://global.abb/group/en/technology/cyber-security)**.
+- **[ABB Cybersecurity](https://www.abb.com/global/en/company/about/cybersecurity)**.
 - **[Universal Robots support](https://www.universal-robots.com/support/)** (search "cybersecurity" / "security advisory").
 - **[Siemens ProductCERT](https://www.siemens.com/global/en/products/services/cert.html)**: covers robotic cells and ICS.
 - **KUKA**: report via the **[KUKA Customer Portal](https://my.kuka.com/)** (vendor does not publish a public PSIRT page at time of writing).
@@ -560,7 +577,7 @@ When you can't find a specific talk above, search these archives:
 ### Podcasts
 - **[Robohub Podcast](https://robohub.org/podcast/)**: general; occasional security episodes.
 - **[Unsolicited Response (Dale Peterson)](https://dale-peterson.com/podcast/)**: ICS / OT.
-- **[Hack the Plant (Bryson Bort)](https://www.iconcerto.com/hacktheplant)**: OT including robots.
+- **[Hack the Plant (Bryson Bort, ICS Village)](https://icsvillage.com/podcast)**: OT/ICS including robots.
 - **[Darknet Diaries](https://darknetdiaries.com/)**: occasional robotic incident episodes.
 - **[Risky Business](https://risky.biz/netcasts/risky-business/)**: covers major robot CVEs.
 
