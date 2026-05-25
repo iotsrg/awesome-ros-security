@@ -442,65 +442,96 @@ Pivot reading: [Awesome ICS Security guide](https://github.com/V33RU/awesome-con
 
 ## Conference Talks
 
-### DEF CON
-- **DEF CON 25 (2017)**: *Breaking the x86 Instruction Set, Hacking Robots Before Skynet* (Cerrudo, Apa).
-- **DEF CON 26 (2018)**: *Inside the Fake Science Factory* (relevance: industrial autonomy).
-- **DEF CON 27 (2019)**: *Industrial Robotics: Are We Safe?* (Quarta, Maggi).
-- **DEF CON 29 (2021)**: *Hacking Humanoid Robots* (various researchers).
-- **DEF CON 30 (2022)**: *Robots with Lasers and Cameras (but No Security): Liability, Lawsuits, and the Future*.
-- **DEF CON 31 (2023) ICS Village**: Multiple ROS 2 / DDS talks.
-- **DEF CON 32 (2024)**: *Compromising LLM-Backed Robots*, *Unitree Reverse Engineering* (ICS / Cloud Village).
-- **[DEF CON Media Server](https://media.defcon.org/)**.
+Every entry below has a verified video, slides, or paper link. Grouped by topic, then by year (most recent first). Have a great talk to add? Open a PR.
 
-### Black Hat
-- **Black Hat USA 2017**: *Hacking Robots Before Skynet* (Cesar Cerrudo, IOActive).
-- **Black Hat USA 2018**: *Demystifying the Secure Enclave Processor* (relevance: secure elements in robots).
-- **Black Hat Europe 2019**: *Rogue Automation: Vulnerable and Malicious Code in Industrial Programming*.
-- **Black Hat USA 2020**: *Industrial Protocol Gateways Under Analysis*.
-- **Black Hat USA 2022**: *Attacking Industrial Robots in 2022* (Quarta, Maggi).
-- **Black Hat Europe 2023**: *Robots in Hospitals: An Attacker's Perspective*.
-- **[Black Hat Briefings archive](https://www.blackhat.com/html/archives.html)**.
+### Industrial Robot Attacks
 
-### ROSCon
-- **ROSCon 2018**: *SROS2: Usable Cyber Security Tools for ROS 2* (Mayoral-Vilches et al.).
-- **ROSCon 2019**: *Cybersecurity in ROS* panel.
-- **ROSCon 2020**: *Security Working Group Update*.
-- **ROSCon 2021**: *Penetration Testing with ROSPenTo*.
-- **ROSCon 2022**: *DDS Security in Practice*.
-- **ROSCon 2023**: *SROS2 Maturity and Adoption Update*.
-- **ROSCon 2024**: *Vulnerabilities in the ROS 2 Nav Stack* / *Trustworthy AI on Robots*.
-- **[ROSCon Talks Index](https://roscon.ros.org/)**.
+- **Quarta, Pogliani, Polino, Maggi, Zanchettin, Zanero** — *An Experimental Security Analysis of an Industrial Robot Controller* — IEEE S&P 2017
+  - Paper: https://ieeexplore.ieee.org/document/7958582
+  - Project page: https://robosec.org/
+- **Quarta, Maggi et al.** — *Breaking the Laws of Robotics: Attacking Industrial Robots* — Black Hat USA 2017
+  - Briefing page: https://www.blackhat.com/us-17/briefings/schedule/#breaking-the-laws-of-robotics-attacking-industrial-robots-7256
+- **Maggi, Pogliani et al.** — *OTRazor: Static Code Analysis for Vulnerability Discovery in Industrial Automation Scripts* — Black Hat USA 2020
+  - White paper: https://i.blackhat.com/USA-20/Wednesday/us-20-Maggi-OTRazor-Static-Code-Analysis-For-Vulnerability-Discovery-In-Industrial-Automation-Scripts-wp.pdf
+  - Speaker page: https://maggi.cc/talk/maggi_otrazorbhus_talk_2020/
+- **Pogliani, Maggi, Balduzzi, Quarta, Zanero** — *Detecting Insecure Code Patterns in Industrial Robot Programs* — AsiaCCS 2020
+  - Paper: https://www.semanticscholar.org/paper/Detecting-Insecure-Code-Patterns-in-Industrial-Pogliani-Maggi/ced923c300b63d043629fd200beac7168e04b765
+- **Trend Micro & Politecnico di Milano** — *Rogue Robots: Testing the Limits of an Industrial Robot's Security* — 2017 white paper
+  - https://documents.trendmicro.com/assets/wp/wp-industrial-robot-security.pdf
 
-### CCC (Chaos Communication Congress)
-- **34C3 (2017)**: *[Unleash Your Smart-Home Devices: Vacuum Cleaning Robot Hacking](https://media.ccc.de/v/34c3-9147-unleash_your_smart-home_devices_vacuum_cleaning_robot_hacking)*.
-- **36C3 (2019)**: *Hacking Smart Vacuum Cleaners Continued*.
-- **37C3 (2023)**: *Reversing Recent Consumer Robots*.
-- **[CCC Media](https://media.ccc.de/)**.
+### Consumer Robots (Vacuum / Lawn Mower / Smart Home)
 
-### HITB (Hack In The Box)
-- **HITB 2018 Amsterdam**: *Robotics Security: Theory vs Practice*.
-- **HITB 2019**: *Pwning Industrial Robots*.
-- **HITB 2022 Singapore**: *Robot Operating System: An Offensive Perspective*.
-- **[HITB Materials](https://conference.hitb.org/materials/)**.
+- **Giese** — *Reverse Engineering and Hacking Ecovacs Robots* — DEF CON 32 (2024)
+  - Slides: https://dontvacuum.me/talks/DEFCON32/DEFCON32_reveng_hacking_ecovacs_robots.pdf
+  - DEF CON forum: https://forum.defcon.org/node/245765
+- **Giese** — *Sucking Dust and Cutting Grass: Reversing Robots and Bypassing Security* — 37C3 (2023)
+  - Video: https://media.ccc.de/v/37c3-11943-sucking_dust_and_cutting_grass_reversing_robots_and_bypassing_security
+  - Slides & demos: https://dontvacuum.me/talks/37c3-2023/37c3-vacuuming-and-mowing.html
+- **Giese** — *Vacuum Robot Security and Privacy* — DEF CON 31 (2023)
+  - Speaker index: https://dontvacuum.me/talks/
+- **Giese & Wegemer** — *Unleash Your Smart-Home Devices: Vacuum Cleaning Robot Hacking* — 34C3 (2017)
+  - Video: https://media.ccc.de/v/34c3-9147-unleash_your_smart-home_devices_vacuum_cleaning_robot_hacking
+  - Slides: https://dontvacuum.me/talks/34c3-2017/34c3.html
+  - YouTube mirror: https://www.youtube.com/watch?v=uhyM-bhzFsI
 
-### Industrial / OT-Focused
-- **S4 Conference (s4xevents)**: multiple robotics / OT robot talks annually.
-- **ICS Cyber Security Conference (SecurityWeek)**: industrial robot tracks.
-- **CS3STHLM**: yearly OT/robot deep-dives.
-- **4SICS / SCADASEC events**.
+### Robot Pentesting Tools & Methodology
 
-### Academic / Industry
-- **USENIX Security**: Quarta et al. industrial robots; Maggi smart factory.
-- **NDSS Symposium**: sensor spoofing & autonomous systems.
-- **IEEE S&P / Oakland**: adversarial perception / LiDAR spoofing.
-- **ACM CCS**: LiDAR spoofing (Cao et al.), VLA attacks.
-- **ICRA / IROS**: occasional security tracks.
+- **Cerrudo & Apa (IOActive)** — *Hacking Robots Before Skynet* — HITB GSEC 2017 & Ekoparty 2017
+  - Video (HITB GSEC): https://www.youtube.com/watch?v=CD2w602tyJk
+  - Video (Ekoparty): https://www.youtube.com/watch?v=ki66_wij_Dk
+  - Paper: https://www.ioactive.com/wp-content/uploads/pdfs/Hacking-Robots-Before-Skynet.pdf
+  - Technical appendix: https://www.ioactive.com/wp-content/uploads/pdfs/Hacking-Robots-Before-Skynet-Technical-Appendix.pdf
+- **Mayoral-Vilches et al.** — *SROS2: Usable Cyber Security Tools for ROS 2* — 2022
+  - Paper: https://arxiv.org/abs/2208.02615
+  - Slides: https://aliasrobotics.com/files/SROS2.pdf
+- **ROS-SWG** — *ROS 2 Security Workshop* — ROSCon 2019
+  - Workshop site (slides, exercises): https://ros-swg.github.io/ROSCon19_Security_Workshop/
 
-### Other Notable
-- **BSidesLV / BSides Las Vegas**: rosbridge talks (2019-2024).
-- **Hackaday Supercon**: hardware robot reversing.
-- **OffensiveCon**: low-level exploitation talks relevant to robot firmware.
-- **Pwn2Own Automotive (since 2024)**: includes EV/robot adjacent targets.
+### LiDAR / Sensor / Perception Attacks
+
+- **Cao et al.** — *You Can't See Me: Physical Removal Attacks on LiDAR-based Autonomous Vehicles* — USENIX Security 2023
+  - Paper: https://www.usenix.org/system/files/sec23summer_349-cao-prepub.pdf
+  - USENIX talk page: https://www.usenix.org/conference/usenixsecurity23/presentation/cao
+- **Sun, Cao, Chen, Mao** — *Towards Robust LiDAR-based Perception in Autonomous Driving: Black-box Adversarial Sensor Attack* — USENIX Security 2020
+  - USENIX page: https://www.usenix.org/conference/usenixsecurity20/presentation/sun
+  - PDF: https://ics.uci.edu/~alfchen/jiachen_usenix20.pdf
+- **Cao et al.** — *Adversarial Sensor Attack on LiDAR-based Perception in Autonomous Driving* — ACM CCS 2019
+  - Paper: https://arxiv.org/abs/1907.06826
+
+### LLM-Controlled Robot Attacks (emerging)
+
+- **Robey, Ravichandran, Kumar, Hassani, Pappas** — *Jailbreaking LLM-Controlled Robots* (RoboPAIR) — UPenn / CMU 2024
+  - Paper: https://arxiv.org/abs/2410.13691
+  - Project: https://robopair.org/
+  - CMU ML blog write-up: https://blog.ml.cmu.edu/2024/10/29/jailbreaking-llm-controlled-robots/
+- **Mayoral-Vilches et al.** — *Cybersecurity AI: Humanoid Robots as Attack Vectors* (Unitree G1) — 2025
+  - Paper: https://arxiv.org/html/2509.14139v1
+
+### Foundational ROS Security
+
+- **McClean, Stull, Farrar, Mascareñas** — *A Preliminary Cyber-Physical Security Assessment of the Robot Operating System (ROS)* — SPIE 2013 (DEF CON 20 honeypot project)
+  - Paper: https://ui.adsabs.harvard.edu/abs/2013SPIE.8741E..10M/abstract
+- **DeMarinis, Tellex, Kemerlis, Konidaris, Fonseca** — *Scanning the Internet for ROS: A View of Security in Robotics Research* — 2018
+  - Paper: https://arxiv.org/abs/1808.03322
+- **Mayoral-Vilches et al.** — *Can ROS be Used Securely in Industry? Red-Teaming ROS-Industrial* — 2020
+  - Paper: https://arxiv.org/abs/2009.08211
+
+### Conference archives (browse for more)
+
+When you can't find a specific talk above, search these archives:
+
+- **DEF CON Media Server** — https://media.defcon.org/
+- **DEF CON YouTube channel** — https://www.youtube.com/user/DEFCONConference
+- **Black Hat archives** — https://www.blackhat.com/html/archives.html
+- **ROSCon talk index** (all years) — https://roscon.ros.org/
+- **CCC media** (all Congresses + camps) — https://media.ccc.de/
+- **USENIX Security past programs** — https://www.usenix.org/conferences/byname/108
+- **NDSS Symposium archive** — https://www.ndss-symposium.org/past-ndss-papers/
+- **IEEE S&P (Oakland) past programs** — https://www.ieee-security.org/TC/SP-Index.html
+- **ACM CCS proceedings** — https://www.sigsac.org/ccs.html
+- **HITB conference archive** — https://conference.hitb.org/materials/
+- **Don't Vacuum Me** (Dennis Giese's talk index) — https://dontvacuum.me/talks/
+- **RoboSec** (Polimi industrial-robot research) — https://robosec.org/
 
 ---
 
