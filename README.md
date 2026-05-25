@@ -310,12 +310,17 @@ Learn more:
 ### Softbank NAO / Pepper
 The IOActive 2017-2018 *Hacking Robots Before Skynet* research documented ~50 flaws in NAO, Pepper, UR, Baxter. Not all received CVE assignments. See the [IOActive paper](https://www.ioactive.com/wp-content/uploads/pdfs/Hacking-Robots-Before-Skynet.pdf) and [technical appendix](https://www.ioactive.com/wp-content/uploads/pdfs/Hacking-Robots-Before-Skynet-Technical-Appendix.pdf) for full details.
 
-### Tesla / Boston Dynamics / Unitree (Public Research)
-| Target | Description | Reference |
+### Unitree (Public Research)
+| ID / Target | Description | Reference |
 |---|---|---|
-| **Boston Dynamics Spot** | rosbridge / API exposure analysis | DEF CON 30/31 talks |
-| **Unitree Go1 / G1** | Firmware reverse engineering, exposed services | Independent researcher write-ups, 2024 |
-| **Tesla Optimus** | Early reverse engineering of perception stack | 2024-2025 reports |
+| **CVE-2025-2894** | Unitree Go1 backdoor: hardcoded CloudSail API key enables full remote control without auth | [SentinelOne advisory](https://www.sentinelone.com/vulnerability-database/cve-2025-2894/) |
+| **CVE-2026-27509** | Unitree Go2 unauthenticated DDS-based RCE via `rt/api/programming_actuator/request` (firmware V1.1.7-V1.1.11 EDU) | [boschko.ca write-up](https://boschko.ca/unitree-go2-rce/) |
+| **CVE-2026-27510** | Unitree Go2 mobile-app SQLite DB tampering enables persistent RCE bound to controller key combos | [boschko.ca write-up](https://boschko.ca/unitree-go2-rce/) |
+| **UniPwn (no CVE assigned at time of writing)** | BLE Wi-Fi config service on Unitree Go2/B2/G1/H1 accepts the string `unitree` as a "secret" + uses hardcoded encryption keys + unsanitized shell injection. Worm-capable: infected robot scans BLE for other Unitree robots and compromises them. Disclosed Sept 2025 | [IEEE Spectrum (Sept 2025)](https://spectrum.ieee.org/unitree-robot-exploit), [Hackaday writeup](https://hackaday.com/2025/09/30/unitree-humanoid-robot-exploit-looks-like-a-bad-one/) |
+| **Unitree G1 static fleet-wide Blowfish-ECB key** | Single key reused across every G1 worldwide; effective entropy of the encryption is zero bits once one robot is reversed | [Mayoral-Vilches et al. 2025 (arXiv:2509.14139)](https://arxiv.org/abs/2509.14139) |
+
+### Boston Dynamics, Tesla Optimus (status note)
+No specific public-research CVEs or peer-reviewed vulnerability reports for **Boston Dynamics Spot** or **Tesla Optimus** were verifiable at time of writing. General "security concerns" think-pieces exist, but they do not document specific exploitable issues. If you have a verified write-up, please PR.
 
 > 📚 **Authoritative registry:** [Robot Vulnerability Database (RVD)](https://github.com/aliasrobotics/RVD) by Alias Robotics. ~241 catalogued vulnerabilities plus ~265 tracked ROS 2 bug entries (as of 2024). Verify current counts on the repo.
 
