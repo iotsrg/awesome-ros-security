@@ -15,9 +15,17 @@
   <a href="https://iotsrg.org/"><img src="https://img.shields.io/badge/IOTSRG-org-8b5cf6?style=for-the-badge"/></a>
 </p>
 
+<p align="center">
+  <a href="CONTRIBUTING.md"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square"/></a>
+  <a href="SECURITY.md"><img src="https://img.shields.io/badge/audited-no_fake_links-success?style=flat-square"/></a>
+  <img src="https://img.shields.io/badge/entries-verified_primary--source-blue?style=flat-square"/>
+</p>
+
 ---
 
 Modern robots run on the **Robot Operating System (ROS / ROS 2)** and a stack of DDS, embedded Linux, real-time controllers, perception ML models, and industrial fieldbuses. They blur the line between IT, OT, and AI, and they move in the physical world. This list covers the full robotics security landscape: ROS internals, attack surface, pentesting tools, checklists, known CVEs, frameworks, talks, and research.
+
+> **What makes this list different:** every entry has been individually verified against a primary source (NVD for CVEs, arXiv/DOI for papers, vendor docs for tools, conference archives for talks). The git log documents every fabricated entry we found and removed during audit. PRs follow the same standard , see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ---
 
@@ -736,6 +744,14 @@ ROS-Industrial is the ROS branch focused on industrial / OT environments. The th
 - **[CVE.org](https://www.cve.org/)**: official CVE registry.
 
 **Disclosure**: report ROS bugs via [REP-2006](https://ros.org/reps/rep-2006.html); vendor robots via vendor PSIRT or Alias Robotics as CNA.
+
+---
+
+## Star History
+
+<a href="https://star-history.com/#iotsrg/awesome-ros-security&Date">
+  <img src="https://api.star-history.com/svg?repos=iotsrg/awesome-ros-security&type=Date" alt="Star History Chart" />
+</a>
 
 ---
 
